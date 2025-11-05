@@ -13,11 +13,6 @@ $age = 20;
 <body>
 	<h1>Переменные и вывод</h1>
 	<?php
-		echo "Меня зовут: $name<br>";
-		echo "Мне $age лет<br>";
-		echo "Тип переменной \$name: " . gettype($name) . "<br>";
-		echo "Тип переменной \$age: " . gettype($age) . "<br>";
-		unset($name, $age);
 	/*
 	ЗАДАНИЕ 2
 	- Выведите с помощью echo фразу "Меня зовут: $name", например: 'Меня зовут: Иван'.
@@ -28,5 +23,12 @@ $age = 20;
 	- Изолируйте код PHP от HTML-разметки.
 	*/
 	?> 
+	Меня зовут: <?= $name ?> <br>
+	Мне <?= $age ?> лет <br>
+	Тип переменной $name: <?= gettype($name) ?> <br>
+	Тип переменной $age: <?= gettype($age) ?> <br>
+<?php 
+unset($name, $age);
+?> 
 </body>
 </html>
