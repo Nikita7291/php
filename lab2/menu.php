@@ -25,29 +25,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Меню</title>
-	<style>
-		.menu {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			width: 200px;
-		}
-		.menu li {
-			margin-bottom: 5px;
-		}
-		.menu a {
-			display: block;
-			padding: 8px 16px;
-			text-decoration: none;
-			color: #000;
-			background-color: #f1f1f1;
-			border: 1px solid #d4d4d4;
-			border-radius: 4px;
-		}
-		.menu a:hover {
-			background-color: #ddd;
-		}
-	</style>
 </head>
 <body>
 	<h1>Меню</h1>
@@ -66,11 +43,9 @@
 	      <li><a href='calc.php'>Калькулятор</a></li>
 	    </ul>
 	*/
-	echo "<ul class='menu'>";
 	foreach($leftMenu as $item) {
-		echo "<li><a href='" . $item['href'] . "'>" . $item['link'] . "</a></li>";
+		echo "<div><a href='" . $item['href'] . "'>" . $item['link'] . "</a></div>";
 	}
-	echo "</ul>";
 	?> 
 	</nav>
 </body>
