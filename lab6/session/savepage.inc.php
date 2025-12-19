@@ -13,8 +13,6 @@ if (!isset($_SESSION['visitedPages']))
 	$_SESSION['visitedPages'] = [];
 
 
-//$currentPage = basename($_SERVER['PHP_SELF']);
 $currentPage = $_SERVER['REQUEST_URI'];
 
-//if (!in_array($currentPage, $_SESSION['visitedPages']))
 $_SESSION['visitedPages'][] = $currentPage;
