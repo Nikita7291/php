@@ -1,13 +1,15 @@
 <?php
 declare(strict_types=1);
 
-use App\Classes\User;
-use App\Classes\SuperUser;
+// 1. Исправляем namespace здесь (было App, стало src)
+use src\Classes\User;
+use src\Classes\SuperUser;
 
 spl_autoload_register(function ($class): void {
-    // Превращаем App\Classes\User в путь src/Classes/User.php
-    $path = str_replace('App', 'src', $class);
-    $file = __DIR__ . '/' . str_replace('\\', '/', $path) . '.php';
+    // 2. Упрощаем автозагрузчик. 
+    // Поскольку namespace (src\Classes) теперь совпадает с папкой (src/Classes), 
+    // нам просто нужно заменить обратные слэши на прямые.
+    $file = __DIR__ . '/' . str_replace('\\', '/', $class) . '.php';
     
     if (file_exists($file)) {
         require $file;
@@ -23,6 +25,7 @@ echo "<!DOCTYPE html>
 </head>
 <body>";
 
+// Эти вызовы теперь сработают, так как они ссылаются на src\Classes
 $user1 = new User("Денис", "denchik", "pass1");
 $user2 = new User("тип", "tipka", "pass2");
 $user3 = new User("вовчик", "vwvw", "pass3");
