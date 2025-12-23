@@ -18,7 +18,7 @@
 		$count++;
 		
 		echo "<table>";
-		echo "<tr><th style='background-color: $color;' colspan='" . ($cols + 1) . "'>Таблица умножения</th></tr>";
+		echo "<caption style='font-weight: bold; margin-bottom: 10px;'>Таблица умножения (вызов №$count)</caption>";
 		
 	
 		echo "<tr>";
@@ -115,3 +115,4 @@
 	?> 
 </body>
 </html>
+
